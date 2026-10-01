@@ -1,10 +1,11 @@
+import Nav from "./Components/Nav"
 
 
 function App() {
 
   return (
     <>
-      <h1>Hello React</h1>
+      <Nav></Nav>
     </>
   )
 }
