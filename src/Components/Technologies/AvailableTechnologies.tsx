@@ -92,7 +92,7 @@ const AvailableTechnologies = ({ technologies }: IAvailableTechnologiesProps) =>
 
             <div className="md:col-span-1">
 
-                <div className="sticky top-5 rounded-2xl border border-base-200 bg-base-100 p-5 shadow-sm">
+                <div className="sticky top-22 rounded-2xl border border-base-200 bg-base-100 p-5 shadow-sm">
 
                     {/* Header */}
                     <div className="mb-5">
@@ -107,14 +107,14 @@ const AvailableTechnologies = ({ technologies }: IAvailableTechnologiesProps) =>
 
                     {selectedStack.length === 0 ? (
                         <div className="py-8 text-center">
-                            <p className="text-sm font-medium text-base-content/50">
+                            <p className="text-sm font-medium py-5 rounded-2xl border border-slate-300">
                                 Your Stack is Empty
                             </p>
                         </div>
                     ) : selectedStack.map((technology) => (
                         <div
                             key={technology.id}
-                            className="flex items-center justify-between rounded-lg border border-base-200 p-3"
+                            className="flex items-center justify-between rounded-lg border border-base-300 mb-2 p-3 gap-2"
                         >
                             <div className="flex items-center gap-3">
                                 <img
@@ -135,7 +135,7 @@ const AvailableTechnologies = ({ technologies }: IAvailableTechnologiesProps) =>
                             </div>
 
                             <button onClick={() => handleRemoveToStack(technology)} className="text-xl text-base-content/40 hover:text-error cursor-pointer">
-                                ×
+                                ✕
                             </button>
                         </div>
                     ))}

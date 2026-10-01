@@ -77,7 +77,7 @@ const TechnologiesCart = ({ technology, isSelected, handleAddToStack }: ITechnol
         `}
                 disabled={isSelected}
             >
-                {isSelected ? "✓ Selected" : "Add to Stack"}
+                {isSelected ? "✓ Added to Stack" : "Add to Stack"}
             </button>
 
         </div>

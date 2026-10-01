@@ -3,7 +3,7 @@ import Logo from "../assets/logo-text.png"
 import Hambargar from "../assets/hamburger.png"
 const Nav = () => {
     return (
-        <div className="border-b">
+        <div className="border-b border-b-slate-200 sticky top-0 z-50 bg-white">
             <div className="container mx-auto px-5 md:px-0 py-4 grid grid-cols-3 md:flex md:items-center md:justify-between">
                 <button className="md:hidden"><img src={Hambargar} alt="Hambarger Menu" className="w-6 h-6" /></button>
                 <img src={Logo} alt="Logo Image" className="justify-self-center md:justify-self-start" />
