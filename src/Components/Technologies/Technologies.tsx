@@ -1,5 +1,6 @@
 import { use } from "react";
 import type { ITechnologies } from "../../types/Technologies";
+import AvailableTechnologies from "./AvailableTechnologies";
 
 interface ITechnologiesProps{
     technologiesPromise: Promise<ITechnologies[]>
@@ -14,7 +15,7 @@ const Technologies = ({technologiesPromise} : ITechnologiesProps) => {
                 <p className="text-gray-600">Pick one technology per category to build your ideal stack.</p>
             </div>
 
-            
+            <AvailableTechnologies technologies={technologies}></AvailableTechnologies>
         </div>
     );
 };
