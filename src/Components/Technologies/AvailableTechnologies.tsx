@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { ITechnologies } from "../../types/Technologies";
 import TechnologiesCart from "./TechnologiesCart";
+import { toast } from "react-toastify";
 
 interface IAvailableTechnologiesProps {
     technologies: ITechnologies[]
@@ -12,15 +13,61 @@ const AvailableTechnologies = ({ technologies }: IAvailableTechnologiesProps) =>
 
     const handleAddToStack = (technology: ITechnologies) => {
         setSelectedStack((previous) => [...previous, technology])
+
+        toast.success(`${technology.name} added to your stack`, {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
     }
 
     const handleRemoveToStack = (technology: ITechnologies) => {
         const removeStack = selectedStack.filter(item => item.id !== technology.id)
         setSelectedStack(removeStack);
+
+        toast.info(`${technology.name} removed your stack`, {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
     }
 
     const handleRemoveAll = () => {
+        if (selectedStack.length === 0) {
+            toast.error(`Your stack is already empty!`, {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+            return;
+        }
+
         setSelectedStack([])
+        toast.warn(`All Stack removed your stack`, {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
     }
 
     return (
