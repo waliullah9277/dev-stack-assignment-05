@@ -69,10 +69,10 @@ const TechnologiesCart = ({ technology, isSelected, handleAddToStack }: ITechnol
           text-white
           transition-all
           duration-300
-          cursor-pointer
+          
           ${isSelected
-                        ? "bg-green-300 text-white"
-                        : ""
+                        ? "bg-green-300 text-white cursor-not-allowed"
+                        : "cursor-pointer"
                     }
         `}
                 disabled={isSelected}
