@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { ITechnologies } from "../../types/Technologies";
+import TechnologiesCart from "./TechnologiesCart";
 
 interface IAvailableTechnologiesProps {
     technologies: ITechnologies[]
@@ -33,7 +34,7 @@ const AvailableTechnologies = ({ technologies }: IAvailableTechnologiesProps) =>
                         technologies.map((technology) => {
                             const isSelected = selectedStack.filter((item) => item.id === technology.id).length > 0;
                             return (
-                                
+                                <TechnologiesCart key={technology.id} technology={technology} isSelected={isSelected} handleAddToStack={handleAddToStack}></TechnologiesCart>
                             )
                         })
                     }
@@ -56,9 +57,6 @@ const AvailableTechnologies = ({ technologies }: IAvailableTechnologiesProps) =>
                             {selectedStack.length} Technology Selected
                         </p>
                     </div>
-
-
-
 
                     {selectedStack.length === 0 ? (
                         <div className="py-8 text-center">
