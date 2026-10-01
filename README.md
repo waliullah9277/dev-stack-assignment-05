@@ -47,34 +47,37 @@ Answer: useEffect is used to run some code when a component loads or when some d
 Answer: The key helps React identify each item in a list. It helps React know which item was changed, added, or removed.
 
 For Example:
-technologies.map((technology) => (
+```technologies.map((technology) => (
     <TechnologiesCart
         key={technology.id}
         technology={technology}
     />
 ))
+```
 
 ------------------------------------------------------
 6. What is conditional rendering? Show one place you used it.
 Answer: Conditional rendering means showing something based on a condition. I used it to show a message when the selected stack is empty.
 
 For Example: 
-{selectedStack.length === 0 ? (
+```{selectedStack.length === 0 ? (
     <p>Your Stack is Empty</p>
 ) : (
     selectedStack.map((technology) => (
         // selected technologies
     ))
 )}
+```
 
 ------------------------------------------------------
 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 Answer: We can pass data from a parent to a child using props. In my project, I pass the technology data from AvailableTechnologies to TechnologiesCart. A child can send something back to the parent by using a function passed through props.
 
 For Example:
-<TechnologiesCart
+```<TechnologiesCart
     technology={technology}
     handleAddToStack={handleAddToStack}
 />
+```
 
 Here, handleAddToStack is a function from the parent component. The child calls this function when the user clicks the button.
